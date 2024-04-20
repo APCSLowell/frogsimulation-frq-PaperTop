@@ -16,17 +16,18 @@ public class FrogSimulation
 	public boolean simulate()
 	{ 
 		/* to be implemented in part (a) */
-		int distance = 0;
-		for (int i = 0; i < maxHops; i++){
-			if (distance < 0){
-				return false;
-			}
-			else if (distance >= goalDistance){
-				return true;
-			}
-			distance += hopDistance();
-		}
-		return false;
+		int frogPosition = 0;
+    int hopsRemaining = maxHops;
+
+    while(frogPosition < goalDistance &&
+            frogPosition >= 0 &&
+            hopsRemaining > 0)
+    {
+        frogPosition += hopDistance();
+        hopsRemaining--;
+    }
+
+    return frogPosition >= goalDistance;
 	}
 	
 	public double runSimulations(int num)
