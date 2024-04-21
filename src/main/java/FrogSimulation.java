@@ -27,10 +27,7 @@ public class FrogSimulation
 			}
 		}
 		return false;
-    }
-
-    return frogPosition >= goalDistance;
-	}
+    	}
 	
 	public double runSimulations(int num)
 	{ 
